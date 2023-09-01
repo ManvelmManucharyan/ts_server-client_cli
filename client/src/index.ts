@@ -15,8 +15,6 @@ program
     .description('get list of the cars')
     .action(async () => {
         try {
-            console.log(url);
-            
             const cars: AxiosResponse<Car[]> = await axios.get(`${url}/car/all`)
             if (!cars.data) throw new Error('Something went wrong')
             console.log(changeData(cars.data));
